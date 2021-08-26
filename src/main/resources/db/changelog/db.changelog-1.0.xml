@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet  author="tpg"  id="changelog-1.0">
+        <createTable  tableName="COMPANIES">
+            <column  name="company_id" type="LONG" autoIncrement="false">
+                <constraints nullable="false" primaryKey="true" />
+            </column>
+            <column  name="name"  type="VARCHAR(100)" >
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column  name="telephone_no"  type="VARCHAR(20)" >
+                <constraints nullable="false" unique="false"/>
+            </column>
+            <column  name="email_address"  type="VARCHAR(100)" >
+                <constraints nullable="false" unique="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
