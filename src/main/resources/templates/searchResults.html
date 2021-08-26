@@ -7,7 +7,6 @@
         <div th:fragment="searchResults">
             <div class="form-group blu-margin">
                 <select class="trade-category" th:field="${tradeCategories}"  id="trade-category-selector">
-        <!--            <option value="0">Select Employee Role</option>-->
                     <option th:each="tc : ${tradeCategories}" th:value="${tc.value}" th:text="${tc.label}"></option>
                 </select>
             </div>
