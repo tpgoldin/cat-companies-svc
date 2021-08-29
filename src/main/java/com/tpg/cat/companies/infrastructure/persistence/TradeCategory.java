@@ -1,12 +1,13 @@
 package com.tpg.cat.companies.infrastructure.persistence;
 
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+
+import java.util.List;
 
 @Getter
-@RequiredArgsConstructor
-public enum TradeCategory {
-    BUILDER("Builder"), ELECTRICIAN("Electrician"), PLUMBER("Plumber"), ROOFER("Roofer");
+@Setter
+public class TradeCategory extends TradeCategoryDetails {
 
-    private final String name;
+    private List<TradeSubCategory> tradeSubCategories;
 }

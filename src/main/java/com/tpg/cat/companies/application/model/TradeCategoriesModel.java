@@ -8,22 +8,26 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static java.util.stream.Collectors.toList;
+import static java.util.stream.Collectors.toUnmodifiableList;
+
 @Value
 public class TradeCategoriesModel {
-    public static TradeCategoriesModel tradeCategoriesModel() {
-        return CATEGORIES_MODEL;
+    public static TradeCategoriesModel tradeCategoriesModel(List<TradeCategory> tradeCategories) {
+        return new TradeCategoriesModel(tradeCategories);
     }
 
-    private static final TradeCategoriesModel CATEGORIES_MODEL = new TradeCategoriesModel();
+    static TradeCategoryModel from(TradeCategory value) {
+        return TradeCategoryModel.builder()
+                .label(value.getName())
+                .value(Long.toString(value.getTradeCategoryId()))
+            .build();
+    }
 
     List<TradeCategoryModel> categories;
 
-    private TradeCategoriesModel() {
-        categories = Arrays.stream(TradeCategory.values()).map(tc -> TradeCategoryModel.builder()
-                    .label(tc.getName())
-                    .value(tc.name())
-                .build())
-                .collect(Collectors.toUnmodifiableList());
+    private TradeCategoriesModel(List<TradeCategory> values) {
+        categories = values.stream().map(TradeCategoriesModel::from).collect(toUnmodifiableList());
     }
 
     @Value

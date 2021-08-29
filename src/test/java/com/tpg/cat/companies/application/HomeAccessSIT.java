@@ -38,6 +38,8 @@ public class HomeAccessSIT {
     @Test
     public void givenUserWantsToLookForTradesPerson_whenAccessingHome_thenHomePageIsDisplayed() {
 
+        assertThat(homePage.getTradeField()).isNotNull();
+        assertThat(homePage.getPostCodeField()).isNotNull();
         assertThat(homePage.getTradeCategorySelector()).isNotNull();
     }
 }

@@ -1,10 +1,9 @@
-package com.tpg.cat.companies.application.controllers;
+package com.tpg.cat.companies.application.controller;
 
 import com.tpg.cat.companies.application.model.TradeCategoriesModel;
 import com.tpg.cat.companies.application.model.TradeCategoriesModel.TradeCategoryModel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;

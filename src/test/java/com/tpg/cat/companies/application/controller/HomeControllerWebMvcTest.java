@@ -1,10 +1,7 @@
-package com.tpg.cat.companies.application.controllers;
+package com.tpg.cat.companies.application.controller;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.web.servlet.MockMvc;
 
 import static com.tpg.cat.companies.application.model.TradeCategoriesModel.tradeCategoriesModel;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -12,10 +9,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(controllers = HomeController.class)
-@ActiveProfiles("dev")
-public class HomeControllerWebMvcTest {
-    @Autowired
-    MockMvc mockMvc;
+public class HomeControllerWebMvcTest extends ControllerWebMvcTest {
 
     @Test
     public void givenUserWantsToLookForTradesPerson_whenAccessingHome_thenHomePageIsDisplayed() throws Exception {

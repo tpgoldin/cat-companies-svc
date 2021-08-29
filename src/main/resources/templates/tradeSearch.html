@@ -1,0 +1,28 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<div th:fragment="tradeSearch">
+    <div class="form-group blu-margin">
+        <h1>Looking for a trades person?</h1>
+        <form name='tradeSerachForm' th:action="@{/checkatrade/tradeSearch}" th:object="${tradeSearchRequest}" method='POST'>
+            <table>
+                <tr>
+                    <td>Trade (e.g. Electrician):</td>
+                    <td><input type='text' id="tradeField" th:field="*{trade}"></td>
+                </tr>
+                <tr>
+                    <td>Postcode:</td>
+                    <td><input type='text' id="postCodeField" th:field="*{postCode}" /></td>
+                </tr>
+                <tr>
+                    <td><input name="submit" type="submit" value="submit" /></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+</body>
+</html>

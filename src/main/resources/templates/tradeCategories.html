@@ -4,7 +4,7 @@
       xmlns:th="http://www.thymeleaf.org">
 
     <body>
-        <div th:fragment="searchResults">
+        <div th:fragment="tradeCategories">
             <div class="form-group blu-margin">
                 <select class="trade-category" th:field="${tradeCategories}"  id="trade-category-selector">
                     <option th:each="tc : ${tradeCategories}" th:value="${tc.value}" th:text="${tc.label}"></option>

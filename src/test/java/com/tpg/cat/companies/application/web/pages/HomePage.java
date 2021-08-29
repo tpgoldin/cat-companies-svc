@@ -9,12 +9,20 @@ import org.openqa.selenium.support.ui.Select;
 public class HomePage extends WebPage {
     private static final String HOME_URL = "http://localhost:8081/checkatrade/home";
 
+    private WebElement tradeField;
+    private WebElement postCodeField;
+    private WebElement searchSubmitButton;
+
     private Select tradeCategorySelector;
 
     public HomePage(WebDriver webDriver) {
         super(webDriver);
 
         webDriver.get(HOME_URL);
+
+        tradeField = findElementById("trade-field");
+        postCodeField = findElementById("post-code-field");
+        searchSubmitButton = findElementByName("submit");
 
         tradeCategorySelector = new Select(findElementById("trade-category-selector"));
     }
